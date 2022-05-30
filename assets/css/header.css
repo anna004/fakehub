@@ -1,0 +1,232 @@
+@charset "UTF-8";
+/* -----------------
+   header
+-------------------*/
+header {
+    position: fixed;
+    width: 100%;
+    height: 64px;
+    z-index: 10;
+}
+header .dropdown-caret {
+    color: #f0f6fc;
+}
+.header {
+    display: flex;
+	width: 100%;
+    height: 100%;
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: #161b22;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.serchbox {
+    display: table-cell;
+    width: 100%;
+	margin-right: 16px;
+	padding: 5px 12px;
+    min-height: 28px;
+    line-height: 20px;
+    font-size: inherit;
+    border: solid 1px #30363d;
+	border-radius: 6px;
+    background: #0d1117;
+    box-shadow: none;
+}
+.header-right {
+	margin-left: auto;
+}
+.header-logo {
+	width: 32px;
+	height: 32px;
+}
+.header-avatar img {
+	width: 20px;
+	height: 20px;
+}
+
+.header-notice:hover {
+    opacity: 1;
+}
+.header-notice:hover svg {
+    opacity: .6;
+}
+.header-notice svg,
+.header-overlay svg {
+	width: 16px;
+	height: 16px;
+    color: #f0f6fc;
+}
+.header-overlay,
+.header-avatar {
+	position: relative;
+}
+.header-logo,
+.header-overlay svg,
+.header-avatar img {
+	margin-right: 12px;
+}
+.nav-items {
+    display: flex;
+}
+.nav-items li,
+.header-right a,
+.header-right button {
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 16px;
+    white-space: nowrap;
+}
+.nav-items li:last-child,
+.header-right a:last-child {
+	margin-right: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        justify-content: space-between;
+    }
+    .header-right {
+        margin-left: 0;
+    }
+    header a {
+        margin-right: 0;
+    }
+    .hamburger-btn span {
+        width: 24px;
+        height: 1px;
+        background-color: #f0f6fc;
+        position: relative;
+        display: block;
+    }
+    .hamburger-btn span:nth-child(1) {
+        top: 0;
+    }
+    .hamburger-btn span:nth-child(2) {
+        margin: 8px 0;
+    }
+    .hamburger-btn span:nth-child(3) {
+        top: 0;
+    }
+    .hamburger-btn:hover {
+        opacity: .5;
+    }
+    .header-nav {
+        display: none;
+    }
+    .header-nav.active {
+        display: block;
+        position: absolute;
+        top: 45px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 32px);
+        height: 100vh;
+        padding: 16px 0;
+        background-color: #161b22;
+    }
+    .nav-items {
+        display: block;
+    }
+    .nav-items li,
+    .header-right a {
+        margin-right: 0;
+    }
+    .nav-items li {
+        padding: 8px 0;
+        border-top: solid 1px rgba(255,255,255,.15) ;
+    }
+    .nav-items li:first-child {
+        margin-bottom: 16px;
+        border-top: none;
+    }
+}
+
+/* -----------------
+   hover時の動き
+-------------------*/
+.header-notice,
+.header-overlay {
+    position: relative;
+}
+.header-notice-says {
+    display: none;
+    position: absolute;
+    top: 27px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #6e7681;
+    opacity: 1 !important;
+}
+.header-notice-says:after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: 10px;
+    border: 8px solid transparent;
+    border-bottom: 12px solid #6e7681;
+    opacity: 1 !important;
+}
+.header-notice-says p  {
+    color: #fff;
+    font-size: 10px;
+    font-weight: normal;
+    opacity: 1 !important;
+}
+.header-overlay-sub,
+.header-avatar-sub {
+    display: none;
+}
+.header-overlay-sub.active,
+.header-avatar-sub.active {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    padding: 3px 0;
+    border-radius: 5px;
+    background-color: #161b22;
+    border: solid 1px #30363d;
+}
+.header-overlay-sub > a,
+.header-avatar-sub > a {
+    display: block;
+    width: 100%;
+    padding: 4px 8px;
+    color: #c9d1d9;
+    font-size: 14px;
+    font-weight: normal;
+}
+.header-overlay-sub > a:hover,
+.header-avatar-sub > a:hover {
+    color: #fff;
+    background-color: #58a6ff;
+    opacity: 1;
+}
+.header-avatar-sub > hr {
+    color: #30363d;
+    margin: 4px 0;
+}
+.header-avatar-sub > div {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 32px);
+    margin: 10px auto;
+    padding: 0px 8px;
+    font-size: 12px;
+    color: #8b949e;
+    border-radius: 5px;
+    border: solid 1px #30363d;
+}
+.header-avatar-sub > div > svg {
+    width: 16px;
+    margin-right: 4px;
+    color: #8b949e;
+}
+.header-avatar-sub > div:hover,
+.header-avatar-sub > div:hover > svg{
+    color: #58a6ff;
+}
